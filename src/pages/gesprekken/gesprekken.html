@@ -1,0 +1,53 @@
+<!--
+  Generated template for the GesprekkenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Stagegesprek</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="export()">
+        <ion-icon name="download"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+        Student: {{ details.leerlingnaam }}
+    </ion-item>
+    <ion-item>
+      <ion-label>Gesprek</ion-label>
+      <ion-select [(ngModel)]="gesprek.nummer" name="nummer">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Soort</ion-label>
+      <ion-select [(ngModel)]="gesprek.soort" name="soort">
+        <ion-option value="Mondeling">Mondeling</ion-option>
+        <ion-option value="Telefonisch">Telefonisch</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Datum</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="gesprek.datum" name="datum"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Beschrijving</ion-label>
+      <ion-textarea [(ngModel)]="gesprek.beschrijving" name="beschrijving"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" block>Opslaan</button>
+  </form>
+
+</ion-content>

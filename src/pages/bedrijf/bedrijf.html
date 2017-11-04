@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Stagebedrijf</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="updateBedrijf()">
+      <ion-item>
+        <ion-label stacked>Leerbedrijf</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.leerbedrijf" name="leerbedrijf"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Praktijkopleider</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.praktijkopleider" name="praktijkopleider"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Begindatum</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="bedrijf.begindatum" name="begindatum"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Telefoon</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.telefoon" name="telefoon"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Opslaan</button>
+  </form>
+</ion-content>

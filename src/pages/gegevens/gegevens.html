@@ -1,0 +1,57 @@
+<!--
+  Generated template for the GegevensPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gegevens</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="updateStudent()">
+      <ion-item>
+        <ion-label stacked>Leerlingnummer</ion-label>
+        <ion-input type="text" [(ngModel)]="student.nummer" name="nummer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Leerlingnaam</ion-label>
+        <ion-input type="text" [(ngModel)]="student.naam" name="naam"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Klas</ion-label>
+        <ion-input type="text" [(ngModel)]="student.klas" name="klas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Leerjaar</ion-label>
+        <ion-input type="text" [(ngModel)]="student.leerjaar" name="leerjaar"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Leerjaar</ion-label>
+        <ion-input type="text" [(ngModel)]="student.woonplaats" name="woonplaats"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Telefoonnummer</ion-label>
+        <ion-input type="text" [(ngModel)]="student.telefoon" name="telefoon"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Opleiding</ion-label>
+          <ion-select [(ngModel)]="student.opleiding" name="opleiding">
+            <ion-option value="BOL">BOL</ion-option>
+            <ion-option value="BBL">BBL</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Docent</ion-label>
+        <ion-input type="text" [(ngModel)]="student.docent" name="docent"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Opslaan</button>
+  </form>
+
+</ion-content>
