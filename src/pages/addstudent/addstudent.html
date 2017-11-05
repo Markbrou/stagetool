@@ -1,0 +1,94 @@
+<!--
+  Generated template for the AddstudentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Student toevoegen</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  <ion-col col-12 col-lg-6 col-md-12>
+
+      <form (ngSubmit)="createStudent()">
+        <ion-item>
+          <ion-label stacked>Leerlingnummer</ion-label>
+          <ion-input type="text" [(ngModel)]="student.nummer" name="nummer"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Leerlingnaam</ion-label>
+          <ion-input type="text" [(ngModel)]="student.naam" name="naam"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Klas</ion-label>
+          <ion-input type="text" [(ngModel)]="student.klas" name="klas"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Leerjaar</ion-label>
+          <ion-input type="text" [(ngModel)]="student.leerjaar" name="leerjaar"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Woonplaats</ion-label>
+          <ion-input type="text" [(ngModel)]="student.woonplaats" name="woonplaats"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Telefoonnummer</ion-label>
+          <ion-input type="text" [(ngModel)]="student.telefoon" name="telefoon"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Opleiding</ion-label>
+            <ion-select [(ngModel)]="student.opleiding" name="opleiding">
+              <ion-option value="BOL">BOL</ion-option>
+              <ion-option value="BBL">BBL</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Docent</ion-label>
+          <ion-input type="text" [(ngModel)]="student.docent" name="docent"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Leerbedrijf</ion-label>
+          <ion-input type="text" [(ngModel)]="student.leerbedrijf" name="leerbedrijf"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Adres</ion-label>
+          <ion-input type="text" [(ngModel)]="student.bedrijf_adres" name="bedrijf_adres"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Postcode</ion-label>
+          <ion-input type="text" [(ngModel)]="student.bedrijf_postcode" name="bedrijf_postcode"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Plaats</ion-label>
+          <ion-input type="text" [(ngModel)]="student.bedrijf_plaats" name="bedrijf_plaats"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Praktijkopleider</ion-label>
+          <ion-input type="text" [(ngModel)]="student.praktijkopleider" name="praktijkopleider"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Begindatum</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="student.begindatum" name="begindatum"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Telefoon</ion-label>
+          <ion-input type="text" [(ngModel)]="student.bedrijf_nummer" name="bedrijf_nummer"></ion-input>
+        </ion-item>
+
+
+        <button ion-button type="submit" block>Opslaan</button>
+      </form>
+
+  </ion-col>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  </ion-row>
+</ion-content>

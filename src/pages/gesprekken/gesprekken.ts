@@ -45,7 +45,6 @@ export class GesprekkenPage {
   gesprek = { student: this.details.leerlingnummer, nummer: 1, soort: "Mondeling", datum: "DD/MM/YYYY", beschrijving: ""}
 
   logForm() {
-    console.log(this.gesprek)
     this.gesprekCollectionRef.add({ student: this.gesprek.student, nummer: this.gesprek.nummer, soort: this.gesprek.soort, datum: this.gesprek.datum, beschrijving: this.gesprek.beschrijving });
   }
 

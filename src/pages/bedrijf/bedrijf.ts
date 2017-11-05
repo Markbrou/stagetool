@@ -38,6 +38,9 @@ export class BedrijfPage {
 
   public bedrijf = {
     leerbedrijf: this.details.leerbedrijf,
+    bedrijf_adres: this.details.bedrijf_adres,
+    bedrijf_postcode: this.details.bedrijf_postcode,
+    bedrijf_plaats: this.details.bedrijf_plaats,
     praktijkopleider: this.details.praktijkopleider,
     begindatum: this.details.begindatum,
     telefoon: this.details.bedrijf_nummer
@@ -51,6 +54,9 @@ export class BedrijfPage {
   updateBedrijf() {
       this.studentCollectionRef.doc(this.details.id).update({
           leerbedrijf: this.bedrijf.leerbedrijf,
+          bedrijf_adres: this.bedrijf.bedrijf_adres,
+          bedrijf_postcode: this.bedrijf.bedrijf_postcode,
+          bedrijf_plaats: this.bedrijf.bedrijf_plaats,
           praktijkopleider: this.bedrijf.praktijkopleider,
           begindatum: this.bedrijf.begindatum,
           bedrijf_nummer: this.bedrijf.telefoon

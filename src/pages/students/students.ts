@@ -5,9 +5,11 @@ import { ActionSheetController } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { AddstudentPage } from '../addstudent/addstudent';
 import { BedrijfPage } from '../bedrijf/bedrijf';
 import { GegevensPage } from '../gegevens/gegevens';
 import { GesprekkenPage } from '../gesprekken/gesprekken';
+import { BeoordelingPage } from '../beoordeling/beoordeling';
 
 export interface Student {
   name: string;
@@ -39,6 +41,15 @@ export class StudentsPage {
     console.log('ionViewDidLoad StudentsPage');
   }
 
+  newStudent() {
+    this.navCtrl.push(AddstudentPage, {})
+  }
+
+  deleteStudent(student) {
+      console.log('delete: ' + student.id);
+      this.studentCollectionRef.doc(student.id).delete();
+  }
+
   openGegevens(student) {
     this.navCtrl.push(GegevensPage, {
       val: student
@@ -58,14 +69,12 @@ export class StudentsPage {
   }
 
   openBeoordeling(student) {
-    this.navCtrl.push('', {
+    this.navCtrl.push(BeoordelingPage, {
       val: student
     })
   }
 
 showOptions(student) {
-  // console.log(student.id);
-  // console.log(this.studentCollectionRef.doc(student.id));
 
   let actionSheet = this.actionSheetCtrl.create({
     title: 'Selecteer een optie',
@@ -93,6 +102,13 @@ showOptions(student) {
         icon: 'list-box',
         handler: () => {
           this.openBeoordeling(student);
+        }
+      },{
+        text: 'Verwijder student',
+        icon: 'trash',
+        role: 'destructive',
+        handler: () => {
+          this.deleteStudent(student);
         }
       },{
         text: 'Cancel',

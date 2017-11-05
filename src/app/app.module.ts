@@ -5,9 +5,11 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { StudentsPage } from '../pages/students/students';
+import { AddstudentPage } from '../pages/addstudent/addstudent';
 import { GegevensPage } from '../pages/gegevens/gegevens';
 import { GesprekkenPage } from '../pages/gesprekken/gesprekken';
 import { BedrijfPage } from '../pages/bedrijf/bedrijf';
+import { BeoordelingPage } from '../pages/beoordeling/beoordeling';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,9 +32,11 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     StudentsPage,
+    AddstudentPage,
     GegevensPage,
     GesprekkenPage,
     BedrijfPage,
+    BeoordelingPage,
     TabsPage
   ],
   imports: [
@@ -46,9 +50,11 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     StudentsPage,
+    AddstudentPage,
     GegevensPage,
     GesprekkenPage,
     BedrijfPage,
+    BeoordelingPage,
     TabsPage
   ],
   providers: [

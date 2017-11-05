@@ -8,7 +8,14 @@ import { Observable } from 'rxjs/Observable';
 import { HomePage } from '../home/home';
 
 export interface Student {
-  name: string;
+  naam: string;
+  nummer: number;
+  klas: string;
+  leerjaar: string;
+  woonplaats: string;
+  telefoon: number;
+  opleiding: string;
+  docent: string;
 }
 
 
@@ -52,11 +59,11 @@ export class GegevensPage {
         leerlingnummer: this.student.nummer,
         leerlingnaam: this.student.naam,
         klas: this.student.klas,
-        leerjaar: this.details.leerjaar,
-        woonplaats: this.details.woonplaats,
-        telefoon: this.details.telefoon,
-        opleiding: this.details.opleiding,
-        docent: this.details.docent
+        leerjaar: this.student.leerjaar,
+        woonplaats: this.student.woonplaats,
+        telefoon: this.student.telefoon,
+        opleiding: this.student.opleiding,
+        docent: this.student.docent
     });
     this.navCtrl.goToRoot(HomePage);
   }

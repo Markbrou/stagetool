@@ -14,7 +14,9 @@
 
 
 <ion-content padding>
-
+  <ion-row>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  <ion-col col-12 col-lg-6 col-md-12>
   <form (ngSubmit)="updateStudent()">
       <ion-item>
         <ion-label stacked>Leerlingnummer</ion-label>
@@ -25,7 +27,7 @@
         <ion-input type="text" [(ngModel)]="student.naam" name="naam"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label stacked>Klas</ion-label>
+        <ion-label>Klas</ion-label>
         <ion-input type="text" [(ngModel)]="student.klas" name="klas"></ion-input>
       </ion-item>
       <ion-item>
@@ -33,7 +35,7 @@
         <ion-input type="text" [(ngModel)]="student.leerjaar" name="leerjaar"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label stacked>Leerjaar</ion-label>
+        <ion-label>Woonplaats</ion-label>
         <ion-input type="text" [(ngModel)]="student.woonplaats" name="woonplaats"></ion-input>
       </ion-item>
       <ion-item>
@@ -53,5 +55,8 @@
       </ion-item>
       <button ion-button type="submit" block>Opslaan</button>
   </form>
+  </ion-col>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  </ion-row>
 
 </ion-content>

@@ -1,0 +1,689 @@
+<!--
+  Generated template for the BeoordelingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Beoordeling {{ details.leerlingnaam }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="export()">
+        <ion-icon name="download"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="beoordeel()">
+    <ion-row>
+        <ion-col col-12 col-lg-3 col-md-6>
+            <ion-label color="primary" style="font-weight: bold; font-size: 17px;">Technische Aspecten</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-grid>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">1. Voorbereiding Werkzaamheden</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_1" name="brdlng_1">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">2. Plannen/organiseren werkzaamheden</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_2" name="brdlng_2">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">3. Gebruik materiaal/gereedschap</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_3" name="brdlng_3">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v" ></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">4. Gebruik meetapparatuur</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_4" name="brdlng_4">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">5. Tekeninglezen</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_5" name="brdlng_5">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">6. Ontwerpen/aanpassen tekeningen</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_6" name="brdlng_6">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">7. Ontwerpen/aanpassen schakelingen</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_7" name="brdlng_7">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">8. Ontwerpen/aanpassen installaties</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_8" name="brdlng_8">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">9. Kostenberekening maken</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_9" name="brdlng_9">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">10. Theoretisch inzicht</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_10" name="brdlng_10">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">11. Technisch inzicht</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_11" name="brdlng_11">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">12. Kwaliteit geleverde werk</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_12" name="brdlng_12">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">13. Rapporteren werkzaamheden</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_13" name="brdlng_13">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">14. Houdt zich aan bedrijfsregels</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_14" name="brdlng_14">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">15. Houdt zich aan ARBO-regels</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_15" name="brdlng_15">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">Beoordeling technische aspecten</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_technisch" name="brdlng_technisch">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-item>
+              <ion-label color="primary" stacked>Mogelijke opmerkingen en/of aandachtspunten met betrekking tot de technische aspecten</ion-label>
+              <ion-textarea [(ngModel)]="beoordeling.opmerking_1" name="opmerking_1" placeholder="Plaats opmerkingen hier"></ion-textarea>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary" style="font-weight: bold; font-size: 17px;">Houdingsaspecten</ion-label>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">16. Verloop eerste contacten bedrijf</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_16" name="brdlng_16">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">17. Houding ten aanzien van collega's</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_17" name="brdlng_17">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">18. Houding ten aanzien van leidinggevenden</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_18" name="brdlng_18">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v" ></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">19. Houding ten aanzien van klanten</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_19" name="brdlng_19">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">20. Omgaan met kritiek</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_20" name="brdlng_20">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">21. Komt op tijd</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_21" name="brdlng_21">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">22. Toont eigen initiatief</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_22" name="brdlng_22">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v" ></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">23. Inzet</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_23" name="brdlng_23">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">24. Toont belangstelling voor het vak</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_24" name="brdlng_24">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+              <ion-col col-12 col-lg-3 col-md-6>
+                  <ion-label color="primary">Beoordeling houdingsaspecten</ion-label>
+                  <ion-col radio-group [(ngModel)]="beoordeling.brdlng_houding" name="brdlng_houding">
+                    <ion-item>
+                      <ion-label>Onvoldoende</ion-label>
+                      <ion-radio value="o"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Voldoende</ion-label>
+                      <ion-radio  value="v"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Goed</ion-label>
+                      <ion-radio value="g"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                     <ion-label>Niet van toepassing</ion-label>
+                      <ion-radio value="nvt"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-item>
+              <ion-label color="primary" stacked>Mogelijke opmerkingen en/of aandachtspunten met betrekking tot de houdingsaspecten</ion-label>
+              <ion-textarea [(ngModel)]="beoordeling.opmerking_2" name="opmerking_2" placeholder="Plaats opmerkingen hier"></ion-textarea>
+            </ion-item>
+          </ion-row>
+
+          <button ion-button full type="submit">Opslaan</button>
+    </ion-grid>
+  </form>
+</ion-content>

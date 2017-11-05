@@ -9,10 +9,25 @@
 
 
 <ion-content padding>
+  <ion-row>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  <ion-col col-12 col-lg-6 col-md-12>
   <form (ngSubmit)="updateBedrijf()">
       <ion-item>
         <ion-label stacked>Leerbedrijf</ion-label>
         <ion-input type="text" [(ngModel)]="bedrijf.leerbedrijf" name="leerbedrijf"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Adres</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.bedrijf_adres" name="bedrijf_adres"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Postcode</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.bedrijf_postcode" name="bedrijf_postcode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Plaats</ion-label>
+        <ion-input type="text" [(ngModel)]="bedrijf.bedrijf_plaats" name="bedrijf_plaats"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Praktijkopleider</ion-label>
@@ -28,4 +43,7 @@
       </ion-item>
       <button ion-button type="submit" block>Opslaan</button>
   </form>
+  </ion-col>
+  <ion-col col-12 col-lg-3 col-md-12></ion-col>
+  </ion-row>
 </ion-content>
