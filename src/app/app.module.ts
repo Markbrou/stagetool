@@ -12,6 +12,8 @@ import { BedrijfPage } from '../pages/bedrijf/bedrijf';
 import { BeoordelingPage } from '../pages/beoordeling/beoordeling';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { HttpModule } from '@angular/http';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -42,6 +44,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
   ],

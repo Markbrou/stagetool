@@ -22,6 +22,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let students of student$ | async" (click)="showOptions(students)">
+      <ion-icon name="person" item-start color="primary"></ion-icon>
       {{ students.leerlingnaam }}
       ({{ students.leerlingnummer }})
     </ion-item>

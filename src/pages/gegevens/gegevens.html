@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Gegevens</ion-title>
+    <ion-title>Gegevens {{ details.leerlingnaam }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="export()">
+        <ion-icon name="download"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
